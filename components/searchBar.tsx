@@ -6,11 +6,12 @@ interface Props {
     onPress?: () => void;
     onChangeText?: (text: string) => void;
     value ?: string;
+    editable?:  boolean;
 }
 
-export default function SearchBar({ placeHolderText, onPress, onChangeText, value }: Props) {
+export default function SearchBar({ placeHolderText, onPress, onChangeText, value, editable }: Props) {
     return (
-        <View className="flex-row items-center bg-dark-200 rounded-full px-5 py-4">
+        <View className="flex-row items-center bg-dark-200 rounded-full px-5 py-4 w-[90%]">
             <Image
             source={icons.search}
             resizeMode="contain"
@@ -18,6 +19,7 @@ export default function SearchBar({ placeHolderText, onPress, onChangeText, valu
             />
             <TextInput
             onPress={onPress}
+            editable={editable}
             placeholder={placeHolderText}
             value={value}
             onChangeText={onChangeText}

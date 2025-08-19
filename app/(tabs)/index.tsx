@@ -50,6 +50,7 @@ export default function Index() {
             <SearchBar
             placeHolderText="Search for a movie"
             onPress={() => router.push('/search')}
+            editable={false}
             />
 
             <>
